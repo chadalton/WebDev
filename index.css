@@ -1,0 +1,244 @@
+/*CSS for Home*/
+body{
+	background:rgb(25, 25, 25);
+}
+h1{
+	font-family: "Comfortaa";
+	font-size: 125%;
+	color: #0040ff;
+	padding: 10px;
+	height: auto;
+	width: 20%;
+}
+p{
+	font-family: "Comfortaa";
+	font-size: 100%;
+	color: #0040ff;
+	height: auto;
+	width: 80%;
+	background-color: rgb(40, 40, 40);
+	padding: 10px;
+}
+a{
+	text-decoration: none;
+	font-family: "Comfortaa";
+	font-size: 125%;
+	padding : 10px;
+	float: left;
+	color: #0040ff;
+}
+.signup a:hover {
+    background-color: rgb(200, 200, 200);
+}
+#mainlogo{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nav{
+	text-align: center;
+	background-color:rgb(25, 25, 80);
+	height: 50;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 0px 0px 10px 0px;
+}
+#nav ul{
+	display: inline-block;
+    list-style-type: none;
+}
+#nav ul li{
+	float: left;
+}
+#nav ul li a{
+	font-family: "Comfortaa";
+	text-decoration: none;
+	font-size: 125%;
+	color: #0040ff;
+}
+#nav ul li a:hover {
+    background-color: rgb(200, 200, 200);
+}
+.main_photos{
+	margin: auto;
+	text-align: center;
+	padding: 10px 10px 0px 10px;
+}
+.main_photos ul{
+	display: inline-block;
+	list-style-type: none;
+}
+#acoustic_guitar{
+	height: 200px;
+    width: 28%;
+}
+#audience{
+	height: 200px;
+    width: 28%;
+}
+#electric_guitar{
+	height: 200px;
+    width: 28%;
+}
+.intro_content{
+	margin: auto;
+}
+.intro_content ul{
+	display: inline-block;
+	list-style-type: none;
+}
+.intro_content ul li{
+	font-family: "Comfortaa";
+	font-size: 100%;
+	color: #0040ff;
+	padding: 10px;
+	float: left;
+}
+#intro_paragraph{
+	height: 50%;
+	width: 60%;
+}
+#intro_video{
+	padding: 25px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+/*CSS for Video Lessons*/
+.videos{
+	margin: auto;
+}
+.videos ul{
+	display: inline-block;
+	list-style-type: none;
+}
+.videos ul li{
+	font-family: "Comfortaa";
+	font-size: 100%;
+	color: #0040ff;
+	padding: 10px;
+	float: left;
+}
+#video_desc_1{
+	height: 50%;
+	width: 60%;
+}
+#video_1{
+	padding: 25px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+#video_2{
+	padding: 115px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+#video_3{
+	padding: 115px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+/*CSS for Lesson Materials*/
+.helpful_links{
+	text-align: center;
+	height: 50;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 0px 0px 10px 0px;
+	background-color: rgb(40, 40, 40);
+}
+.helpful_links ul{
+	display: inline-block;
+    list-style-type: none;
+}
+.helpful_links ul li{
+	float: left;
+}
+.helpful_links ul li a{
+	font-family: "Comfortaa";
+	text-decoration: none;
+	font-size: 125%;
+	color: #0040ff;
+}
+.helpful_links ul li a:hover{
+	background-color: rgb(200, 200, 200);
+}
+#helpful_desc_1{
+	height: 50%;
+	width: 60%;
+}
+#helpful_video_1{
+	padding: 25px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+#helpful_video_2{
+	padding: 115px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+#helpful_video_3{
+	padding: 115px 30px 0px 0px;
+	height: 250px;
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+/*CSS for Contact*/
+#contact_table{
+	background-color: rgb(40, 40, 40);
+}
+#contact_table td {
+	padding: 10px;
+	font-family: "Comfortaa";
+	text-decoration: none;
+	font-size: 100%;
+	color: #0040ff;
+}
+#contact_table a:hover{
+    background-color: rgb(200, 200, 200);
+}
+/*CSS for Signup*/
+#sign_up, #text_input, #login, #login_form{
+	position: absolute;
+	padding: 20px;
+	font-family: "Comfortaa";
+	text-decoration: none;
+	font-size: 100%;
+	color: #0040ff;
+}
+/*CSS for success on signup*/
+#success{
+	text-align: center;
+	font-family: "Comfortaa";
+	font-size: 125%;
+	color: #0040ff;
+	padding: 10px;
+	height: auto;
+	width: 20%;
+}
+/*CSS for footer*/
+.clear {    
+    clear:both;    
+}
+#footer{
+	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+	font-size: 75%;
+	font-family: "Comfortaa";
+	text-align: center;
+	color: #0040ff;
+}

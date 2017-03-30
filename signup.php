@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <html>
 	<head>
 		<title>caguitarlessons</title>
@@ -27,6 +31,9 @@
 			<label>Last Name:</label> <input name="last_name" type="text">
 			<label>Email Address:</label> <input name="email" type="text">
 			<label>Password:</label> <input name ="password" type="password">
+			<?php
+				
+			?>
 	  		<input type="submit" value="Submit">
 		</form>
 	  	</div>

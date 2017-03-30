@@ -35,14 +35,14 @@ session_start();
 
 		if($db->getConnection()){
 
-			$isValid = $db->checkUserAndPass($email, $password);
+			$valid = $db->checkUserAndPass($email, $password);
 
-			if($isValid){ 
-				$_SESSION["authed_user"] = $email;
-				header('Location: index.php');
+			if($valid){ 
+				$_SESSION['auth_user'] = $email;
+				header('Location: login_success.php');
 			}
 			else{
-				$_SESSION['invalid'] = "invalid username or password!";
+				$_SESSION['unauth_user'] = "invalid username or password!";
 				header('Location: login.php');
 			}
 		}

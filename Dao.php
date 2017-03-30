@@ -18,7 +18,6 @@ class Dao {
 	public function saveUserInfo ($firstname, $lastname, $email, $password) {
     $conn = $this->getConnection();
     $user_sql_query = "INSERT INTO user (firstname, lastname, email, password) VALUES (:firstname, :lastname, :email, :password)";
-
     $q = $conn->prepare($user_sql_query);
     $q->bindParam(":firstname", $firstname);
     $q->bindParam(":lastname", $lastname);

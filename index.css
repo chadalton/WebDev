@@ -221,6 +221,23 @@ span{
 	font-size: 100%;
 	color: #0040ff;
 }
+
+#parent {
+  display: flex;
+}
+#narrow {
+  width: 200px;
+  background: lightblue;
+  /* Just so it's visible */
+}
+#wide {
+  flex: 1;
+  /* Grow to rest of container */
+  background: lightgreen;
+  /* Just so it's visible */
+}
+
+
 /*CSS for success on signup*/
 #success{
 	text-align: center;
@@ -230,6 +247,10 @@ span{
 	padding: 10px;
 	height: auto;
 	width: 20%;
+}
+/*CSS for Login Error*/
+#email_error_text, #password_error_text, #password_number_error_text, #first_name_error_text, #last_name_error_text{
+	color: #FF0000;
 }
 /*CSS for footer*/
 .clear {    

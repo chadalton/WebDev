@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <html>
 <head>
 	<title>caguitarlessons</title>
@@ -18,7 +21,15 @@
 			<li><a href="contact.php">Contact</a></li>
 		</ul>
 	</div>
-	<h1 id="success">Success!</h1>
+	<h1 id="success">
+	<?php 
+		echo "Greetings! " . $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+		unset($_SESSION["first_name"]);
+		unset($_SESSION["last_name"]);
+		unset($_SESSION["email"]);
+		unset($_SESSION["password"]);
+	?> 
+	</h1>
 	<a href="login.php"> Click To Login</a>
 </body>
 </html>

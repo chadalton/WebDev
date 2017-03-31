@@ -10,7 +10,7 @@ session_start();
 
 	else{
 		unset($_SESSION['email']);
-		$_SESSION["emailNotEntered"] = "Must enter a email!";	
+		$_SESSION["emailNotEntered"] = "Must Enter an Email";	
 	}
 
 	if(isset($_POST["password"])  && $_POST["password"] != ""){
@@ -21,7 +21,7 @@ session_start();
 
 	else{
 		unset($_SESSION['password']);
-		$_SESSION["passwordNotEntered"] = "Must enter a password!";
+		$_SESSION["passwordNotEntered"] = "Must Enter a Password";
 		
 	}
 	

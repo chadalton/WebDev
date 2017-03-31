@@ -27,6 +27,9 @@ a{
 	float: left;
 	color: #0040ff;
 }
+span{
+	float: left;
+}
 .signup a:hover {
     background-color: rgb(200, 200, 200);
 }
@@ -210,7 +213,7 @@ a{
     background-color: rgb(200, 200, 200);
 }
 /*CSS for Signup*/
-#sign_up, #text_input, #login, #login_form{
+#sign_up, #text_input, #login, #login_form, #errors{
 	position: absolute;
 	padding: 20px;
 	font-family: "Comfortaa";

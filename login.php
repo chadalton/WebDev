@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <html>
 	<head>
 		<title>caguitarlessons</title>
@@ -20,7 +23,7 @@
 		</div>
 		<div id="login">
 		<form id="login_form" method="POST" action="login_handler.php" border="0">
-			<label>Email:</label> <input name="email" type="text">
+			<label>Email Address:</label> <input name="email" type="text">
 			<label>Password:</label> <input name="password" type="password">
 			<input type="submit" value="Login">
 		</form>

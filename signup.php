@@ -1,7 +1,6 @@
 <?php
 	session_start();
 ?>
-
 <html>
 	<head>
 		<title>caguitarlessons</title>
@@ -15,7 +14,6 @@
 
 	<body>
 		<img id="mainlogo" src="logo.png"/>
-
 		<div id="nav">
 			<ul>
 				<li><a href="index.php">Home</a></li>
@@ -27,17 +25,32 @@
 
 		<div id="sign_up">
 		<form id="text_input" method="POST" action="signup_handler.php" border="0">
-			<label>First Name:</label> <input name="first_name" type="text">
-			<label>Last Name:</label> <input name="last_name" type="text">
-			<label>Email Address:</label> <input name="email" type="text">
+			<label>First Name:</label> <input name="first_name" type="text" 
+			value="<?php 
+				if(isset($_SESSION["first_name"])){ 
+					echo $_SESSION["first_name"];
+					unset($_SESSION["first_name"]);
+				}
+			?>">
+			<label>Last Name:</label> <input name="last_name" type="text" 
+			value="<?php 
+				if(isset($_SESSION["last_name"])){ 
+					echo $_SESSION["last_name"];
+					unset($_SESSION["last_name"]);
+				}
+			?>">
+			<label>Email Address:</label> <input name="email" type="text"
+				value="<?php 
+				if(isset($_SESSION["email"])){ 
+					echo $_SESSION["email"];
+					unset($_SESSION["email"]);
+				}
+			?>">
 			<label>Password:</label> <input name ="password" type="password">
-			<?php
-				
-			?>
 	  		<input type="submit" value="Submit">
 		</form>
 	  	</div>
-	  	
+
 	  	<div class="clear"></div>
 		<div id="footer">Copyright &copy; 2017 Chad Alton
     	</div>

@@ -4,12 +4,31 @@ session_start();
 <html>
 <head>
 	<title>caguitarlessons</title>
-	<div class="signup">
-		<a href="signup.php"> SignUp</a>
-		<a href="login.php"> Login</a>
-	</div>
+		<div class="signup">
+			<a href="signup.php"> SignUp</a>
+			<a href="
+				<?php
+					if(isset($_SESSION["auth_user"])){
+						echo "logout.php";
+					}
+					else{
+						echo "login.php";
+					}
+				?>
+				"
+			> 
+			<?php
+				if(isset($_SESSION["auth_user"])){
+					echo "Logout";
+				}
+				else{
+					echo "Login";
+				}
+			?></a>
+		</div>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link href="index.css" rel="stylesheet" type="text/css">
+	<link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -91,19 +110,15 @@ session_start();
 							echo $_SESSION["errorPassword"];
 							unset($_SESSION["errorPassword"]);
 						}
-						?>
-					</p>
-					<p id="password_number_error_text">
-						<?php
 						if(isset($_SESSION["errorPasswordNumber"])){
 							echo $_SESSION["errorPasswordNumber"];
 							unset($_SESSION["errorPasswordNumber"]);
 						}
 						?>
 					</p>
-
 				</div>
-				<input type="submit" value="Submit">
+				<!-- <input id="submit" type="submit" value="Submit"> -->
+				<button id="submit">Submit</button>
 			</form>
 		</div>
 	</div>

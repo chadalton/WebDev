@@ -1,6 +1,6 @@
 /*CSS for Home*/
 body{
-	background:rgb(25, 25, 25);
+	background:rgb(20, 20, 20);
 }
 h1{
 	font-family: "Comfortaa";
@@ -62,26 +62,22 @@ span{
 #nav ul li a:hover {
     background-color: rgb(200, 200, 200);
 }
-.main_photos{
+
+#nav ul li .current{
+	background-color: rgb(200, 200, 200);
+}
+
+#main_photos{
 	margin: auto;
 	text-align: center;
 	padding: 10px 10px 0px 10px;
 }
-.main_photos ul{
+#main_photos ul{
 	display: inline-block;
 	list-style-type: none;
 }
-#acoustic_guitar{
-	height: 200px;
-    width: 28%;
-}
-#audience{
-	height: 200px;
-    width: 28%;
-}
-#electric_guitar{
-	height: 200px;
-    width: 28%;
+.multiple-items{
+	height: 250px;
 }
 .intro_content{
 	margin: auto;
@@ -103,8 +99,8 @@ span{
 }
 #intro_video{
 	padding: 25px 30px 0px 0px;
-	height: 250px;
-	width: 30%;
+	height: 300px;
+	width: 35%;
 	display: block;
 	margin: 0 auto;
 }
@@ -249,7 +245,7 @@ span{
 	width: 20%;
 }
 /*CSS for Login Error*/
-#email_error_text, #password_error_text, #password_number_error_text, #first_name_error_text, #last_name_error_text{
+#email_error_text, #email_error_unauth, #password_error_text, #password_number_error_text, #first_name_error_text, #last_name_error_text{
 	color: #FF0000;
 }
 /*CSS for footer*/

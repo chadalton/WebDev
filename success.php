@@ -10,6 +10,7 @@
 	</div>
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="index.css" >
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<img id="mainlogo" src="logo.png"/>
@@ -23,13 +24,13 @@
 	</div>
 	<h1 id="success">
 	<?php 
-		echo "Greetings! " . $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+		echo "Success!";
 		unset($_SESSION["first_name"]);
 		unset($_SESSION["last_name"]);
 		unset($_SESSION["email"]);
 		unset($_SESSION["password"]);
 	?> 
 	</h1>
-	<a href="login.php"> Click To Login</a>
+	<a href="login.php"> Click Here To Login</a>
 </body>
 </html>

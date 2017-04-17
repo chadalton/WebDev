@@ -9,15 +9,15 @@ unset($_SESSION["password"]);
 require_once 'Dao.php';
 $dao = new Dao();
 
-$first_name = htmlentities($_POST['first_name']);
-$last_name = htmlentities($_POST['last_name']);
-$email = htmlentities($_POST['email']);
-$password = htmlentities($_POST['password']);
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 $number = preg_match('@[0-9]@', $password);
 $errors = array();
+$email_exists = $dao->checkEmailExists($email);
 
-if(isset($_POST["first_name"]) && $_POST['first_name'] != ""){
-	$first_name= $_POST["first_name"];
+if(isset($_POST['first_name']) && $_POST['first_name'] != ""){
 	$_SESSION["first_name"] = $first_name;
 	unset($_SESSION["errorFirstName:"]);
 }
@@ -28,8 +28,7 @@ else{
 	$errors["errorFirstName"] = "Must Enter a First Name";
 }
 
-if(isset($_POST["last_name"]) && $_POST['last_name'] != ""){
-	$last_name= $_POST["last_name"];
+if(isset($_POST['last_name']) && $_POST['last_name'] != ""){
 	$_SESSION["last_name"] = $last_name;
 	unset($_SESSION["errorLastName"]);
 }
@@ -40,20 +39,28 @@ else{
 	$errors["errorLastName"] = "Must Enter a Last Name";
 }
 
-if(isset($_POST["email"]) && $_POST['email'] != ""){
-	$email = $_POST["email"];
+if(isset($_POST['email']) && $_POST['email'] != "" && filter_var($email, FILTER_VALIDATE_EMAIL) && !$email_exists){
 	$_SESSION["email"] = $email;
-	unset($_SESSION['errorEmail']);
+	unset($_SESSION['errorEmail']);	
 }
 
 else{
 	unset($_SESSION["email"]);
-	$_SESSION["errorEmail"] = "Must Enter an Email";
-	$errors["errorEmail"] = "Must Enter an Email";
+	if($_POST['email'] == ""){
+		$_SESSION["errorEmail"] = "Must Enter an Email";
+		$errors["errorEmail"] = "Must Enter an Email";
+	}
+	else if($_POST['email'] != "" && !filter_var($email, FILTER_VALIDATE_EMAIL)){
+		$_SESSION["errorEmail"] = "Invalid Email Format";
+		$errors["errorEmail"] = "Invalid Email Format";
+	}
+	else if($email_exists){
+		$_SESSION["errorEmail"] = "Email Already Exists";
+		$errors["errorEmail"] = "Email Already Exists";
+	}
 }
 
 if(isset($_POST["password"]) && $_POST['password'] != ""){
-	$password = $_POST["password"];
 	$_SESSION["password"] = $password;
 	unset($_SESSION["errorPassword"]);
 }
@@ -65,12 +72,13 @@ else{
 }
 
 	//REGEX	
-if(!$number){
+if(!$number && !isset($_SESSION["errorPassword"])){
 	$errors["password_num"] = "Password Contain Have Number";
 	$_SESSION["errorPasswordNumber"] = "Password Must Contain Number";
 }
 
 if(count($errors) == 0){
+	$password = hash("sha256", "password" . "fKd93Vmz!k*dAv5029Vkf9$3Aa");
 	$dao->saveUserInfo($first_name, $last_name, $email, $password);
 	header('Location: success.php');
 	exit();

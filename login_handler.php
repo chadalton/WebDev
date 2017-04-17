@@ -4,7 +4,7 @@ session_start();
 
 	if(isset($_POST["email"])  && $_POST["email"] != ""){
 		$email = $_POST['email'];
-		$_SESSION['email'] = $email;
+		$_SESSION["log_email"] = $email;
 		unset($_SESSION['emailNotEntered']);
 	}
 
@@ -15,7 +15,7 @@ session_start();
 
 	if(isset($_POST["password"])  && $_POST["password"] != ""){
 		$password = $_POST['password'];
-		$_SESSION['password'] = $password;
+		$_SESSION["log_pass"] = $password;
 		unset($_SESSION['passwordNotEntered']);
 	}
 
@@ -38,11 +38,12 @@ session_start();
 			$valid = $db->checkUserAndPass($email, $password);
 
 			if($valid){ 
-				$_SESSION['auth_user'] = $email;
+				$_SESSION["auth_user"] = $email;
 				header('Location: login_success.php');
 			}
 			else{
-				$_SESSION['unauth_user'] = "invalid username or password!";
+				$_SESSION["unauth_user"] = "Invalid Email or Password!";
+				unset($_SESSION["auth_user"]);
 				header('Location: login.php');
 			}
 		}

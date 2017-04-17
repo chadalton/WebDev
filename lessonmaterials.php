@@ -1,12 +1,34 @@
+<?php
+	session_start();
+?>
 <html>
 	<head>
 		<title>caguitarlessons</title>
 		<div class="signup">
 			<a href="signup.php"> SignUp</a>
-			<a href="login.php"> Login</a>
+			<a href="
+				<?php
+					if(isset($_SESSION["auth_user"])){
+						echo "logout.php";
+					}
+					else{
+						echo "login.php";
+					}
+				?>
+				"
+			> 
+			<?php
+				if(isset($_SESSION["auth_user"])){
+					echo "Logout";
+				}
+				else{
+					echo "Login";
+				}
+			?></a>
 		</div>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="index.css" >
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
 		<img id="mainlogo" src="logo.png"/>
@@ -14,7 +36,7 @@
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="videolessons.php">Video Lessons</a></li>
-				<li><a href="lessonmaterials.php">Lesson Materials</a></li>
+				<li><a class ="current" href="lessonmaterials.php">Lesson Materials</a></li>
 				<li><a href="contact.php">Contact</a></li>
 			</ul>
 		</div>

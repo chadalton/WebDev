@@ -117,8 +117,8 @@ session_start();
 						?>
 					</p>
 				</div>
-				<label for="message" id="message">Message:</label>
-        		<textarea rows="5" cols="20" name="message"></textarea>
+<!-- 				<label for="message">Message:</label>
+        		<textarea rows="5" cols="20" name="message"></textarea> -->
 				<input id="submit" name="submit" type="submit" value="Submit">
 			</form>
 		</div>

@@ -16,20 +16,18 @@ $password = $_POST['password'];
 $number = preg_match('@[0-9]@', $password);
 $errors = array();
 $email_exists = $dao->checkEmailExists($email);
+$message = $_POST['message'];
 
-/*if($_POST["submit"]){
-    $recipient="chadalton@u.boisestate.edu";
-    $subject="caguitarlessons";
-    $sender=$_POST["first_name"] . " " . $_POST["last_name"];
-    $senderEmail=$_POST["email"];
-    $message=$_POST["message"];
+//Message handling
+$email_subject = "caguitarlessons";
+$email_body = "You have received a new message from the user $first_name $last_name.\n".
+"Message:\n $message".
 
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
-
-    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
-
-    $thankYou="<p>Thank you! Your message has been sent.</p>";
-}*/
+//Sending Message
+$to = "chadaltonmusic@gmail.com";
+$headers = "From: $email \r\n";
+$headers .= "Reply-To: $visitor_email \r\n";
+//mail($to,$email_subject,$email_body,$headers);
 
 if(isset($_POST['first_name']) && $_POST['first_name'] != ""){
 	$_SESSION["first_name"] = $first_name;

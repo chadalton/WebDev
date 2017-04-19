@@ -53,7 +53,12 @@
 			<ul>
 					<li id="intro_paragraph">
 					<p>Introduction</p>
-					<p>My name is Chad Alton and I have 15 years of experience playing the guitar.Throughout my career as a guitar player I've gained experience in a variety of styles (blues,jazz,rock,classical, and fingerstyle). I started playing by receiving lessons from a private guitar teacher for 8 years. After this instruction I gained further teaching from my highschool band teachers. I played in my highschool jazz band for 4 years and participated in performances at the Gene Harris and Lionel Hampton jazz festivals. Upon graduating I received the Louis Armstrong award within my jazz band for my guitar playing.</p>
+					<p>My name is Chad Alton and I have 15 years of experience playing the guitar.
+					Throughout my career as a guitar player I've gained experience in a variety of styles (blues,jazz,rock,classical, and fingerstyle). 
+					I started playing by receiving lessons from a private guitar teacher for 8 years. 
+					After this instruction I gained further teaching from my highschool band teachers. 
+					I played in my highschool jazz band for 4 years and participated in performances at the Gene Harris and Lionel Hampton jazz festivals. 
+					Upon graduating I received the Louis Armstrong award within my jazz band for my guitar playing.</p>
 					</li>
 					<iframe id="intro_video" frameborder="none" src="https://www.youtube.com/embed/vSakoBvdIvU" allowfullscreen></iframe>
 			</ul>

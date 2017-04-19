@@ -17,6 +17,20 @@ $number = preg_match('@[0-9]@', $password);
 $errors = array();
 $email_exists = $dao->checkEmailExists($email);
 
+/*if($_POST["submit"]){
+    $recipient="chadalton@u.boisestate.edu";
+    $subject="caguitarlessons";
+    $sender=$_POST["first_name"] . " " . $_POST["last_name"];
+    $senderEmail=$_POST["email"];
+    $message=$_POST["message"];
+
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}*/
+
 if(isset($_POST['first_name']) && $_POST['first_name'] != ""){
 	$_SESSION["first_name"] = $first_name;
 	unset($_SESSION["errorFirstName:"]);
@@ -86,5 +100,7 @@ if(count($errors) == 0){
 else{
 	header('Location: signup.php');
 }
+
+?>
 
 ?>

@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require_once "Dao.php";
 ?>
 <html>
 	<head>
@@ -30,6 +31,7 @@
 		<link rel="stylesheet" type="text/css" href="index.css" >
 		<link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
 		<link href="slick/slick.css" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<img id="mainlogo" src="logo.png"/>

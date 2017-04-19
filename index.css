@@ -1,6 +1,6 @@
 /*CSS for Home*/
 body{
-	background:rgb(20, 20, 20);
+	background:rgb(25, 25, 25);
 }
 h1{
 	font-family: "Comfortaa";
@@ -64,7 +64,7 @@ span{
 }
 
 #nav ul li .current{
-	background-color: rgb(200, 200, 200);
+	background-color: rgb(40, 40, 40);
 }
 
 #main_photos{

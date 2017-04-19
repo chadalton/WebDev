@@ -45,7 +45,7 @@ session_start();
 	<div id="sign_up">
 		<div id="form">
 			<form id="text_input" method="POST" action="signup_handler.php" border="0">
-				<label>First Name:</label> <input name="first_name" type="text" 
+				<label for="first_name">First Name:</label> <input name="first_name" type="text" 
 				value="<?php 
 				if(isset($_SESSION["first_name"])){ 
 					echo $_SESSION["first_name"];
@@ -62,7 +62,7 @@ session_start();
 						?>
 					</p>
 				</div>
-				<label>Last Name:</label> <input name="last_name" type="text" 
+				<label for="last_name">Last Name:</label> <input name="last_name" type="text" 
 				value="<?php 
 				if(isset($_SESSION["last_name"])){ 
 					echo $_SESSION["last_name"];
@@ -79,7 +79,7 @@ session_start();
 						?>
 					</p>
 				</div>
-				<label>Email Address:</label> <input name="email" type="text"
+				<label for="email">Email Address:</label> <input name="email" type="text"
 				value="<?php 
 				if(isset($_SESSION["email"])){ 
 					echo $_SESSION["email"];
@@ -96,7 +96,7 @@ session_start();
 						?>
 					</p>
 				</div>
-				<label>Password:</label> <input name ="password" type="password"
+				<label for="password">Password:</label> <input name="password" type="password"
 				value="<?php 
 				if(isset($_SESSION["password"])){ 
 					echo $_SESSION["password"];
@@ -117,8 +117,9 @@ session_start();
 						?>
 					</p>
 				</div>
-				<!-- <input id="submit" type="submit" value="Submit"> -->
-				<button id="submit">Submit</button>
+<!-- 			<label for="message">Message:</label>
+        		<textarea rows="5" cols="20" name="message"></textarea> -->
+				<input id="submit" name="submit" type="submit" value="Submit">
 			</form>
 		</div>
 	</div>

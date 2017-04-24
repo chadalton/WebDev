@@ -1,0 +1,1 @@
+O:4:"User":4:{s:10:"^@User^@name";s:6:"Chad";s:11:"^@User^@email";s:31:"chadaltonmusic@gmail.com";s:17:"^@User^@permissions";a:2:{i:0;s:6:"MEMBER";i:1;s:5:"GUEST";}s:8:"^@User^@id";N;}

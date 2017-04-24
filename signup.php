@@ -99,7 +99,6 @@ session_start();
 				<label for="password">Password:</label> <input name="password" type="password"
 				value="<?php 
 				if(isset($_SESSION["password"])){ 
-					echo $_SESSION["password"];
 					unset($_SESSION["password"]);
 				}
 				?>">
@@ -117,7 +116,7 @@ session_start();
 						?>
 					</p>
 				</div>
-<!-- 				<label for="message">Message:</label>
+<!-- 			<label for="message">Message:</label>
         		<textarea rows="5" cols="20" name="message"></textarea> -->
 				<input id="submit" name="submit" type="submit" value="Submit">
 			</form>

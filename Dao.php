@@ -1,9 +1,12 @@
 <?php
+require_once "user.php";
+
 class Dao {
 	private $host = "us-cdbr-iron-east-03.cleardb.net";
 	private $db = "heroku_6fab01d7d11c63f";
 	private $user = "b9975296aebad0";
 	private $pass = "5a87ffef";
+  private $usersFile = "admin.txt";
 
   public function getConnection () {
 		try {
@@ -35,9 +38,16 @@ class Dao {
     return reset($q->fetchAll());
   }
 
+  public function getUserInfo(){
+    $conn = $this->getConnection();
+    $select_query = "SELECT firstname, lastname, email FROM user";
+    $q = $conn->prepare($select_query);
+    $q->execute();
+    return reset($q->fetchAll());
+  }
+  
   public function checkUserAndPass ($email, $password) {
     $conn = $this->getConnection();
-    $password = hash("sha256", "password" . "fKd93Vmz!k*dAv5029Vkf9$3Aa");
     $select_query = "SELECT email FROM user WHERE email = :email AND password = :password";
     $q = $conn->prepare($select_query);
     $q->bindParam(":email", $email);
@@ -54,5 +64,20 @@ class Dao {
     $q->execute();
     return reset($q->fetchAll());
   }
+
+  public function getUser ($email) {
+    $users = file($this->usersFile);
+
+    foreach ($users as $user) {
+      // recreate User object
+      $user = unserialize($user);
+      if ($email == trim($user->getEmail())) {
+        // user email found, return the object
+        return $user;
+      }
+    }
+    throw new Exception("User not found");
+  }
+
 }
 ?>

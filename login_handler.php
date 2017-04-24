@@ -2,6 +2,10 @@
 require_once "Dao.php";
 session_start();
 
+	if("chadaltonmusic@gmail.com" == $_POST['email'] && "password1" == $_POST['password']){
+		header("Location: login.php");
+	}
+
 	if(isset($_POST["email"])  && $_POST["email"] != ""){
 		$email = $_POST['email'];
 		$_SESSION["log_email"] = $email;
@@ -34,6 +38,8 @@ session_start();
 		$db = new Dao();
 
 		if($db->getConnection()){
+
+			$password = hash("sha256", $password . "fKd93Vmz!k*dAv5029Vkf9$3Aa");
 
 			$valid = $db->checkUserAndPass($email, $password);
 

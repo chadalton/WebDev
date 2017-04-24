@@ -23,8 +23,8 @@ session_start();
 		</ul>
 	</div>
 	<div id="login">
-		<form id="login_form" method="POST" action="login_handler.php" border="0">
-			<label>Email Address:</label> <input name="email" type="text"
+		<form id="login_form" method="POST" action="admin_login_handler.php" border="0">
+			<label>Admin Email:</label> <input name="email" type="text"
 			value="<?php 
 			if(isset($_SESSION["log_email"])){ 
 				echo $_SESSION["log_email"];
@@ -45,7 +45,7 @@ session_start();
 					?>
 				</p>
 			</div>
-			<label>Password:</label> <input name="password" type="password"
+			<label>Admin Password:</label> <input name="password" type="password"
 			value="<?php 
 			if(isset($_SESSION["log_password"])){ 
 				echo $_SESSION["log_password"];
@@ -67,9 +67,6 @@ session_start();
 				</p>
 			</div>
 			<input type="submit" value="Login">
-			<div id="admin_login">
-				<a href="admin_login.php"> Admin Login</a>
-			</div>	
 		</form>
 	</div>
 	<div class="clear"></div>

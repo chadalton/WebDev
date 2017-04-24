@@ -90,9 +90,9 @@ if(!$number && !isset($_SESSION["errorPassword"])){
 }
 
 if(count($errors) == 0){
-	$password = hash("sha256", "password" . "fKd93Vmz!k*dAv5029Vkf9$3Aa");
+	$password = hash("sha256", $password . "fKd93Vmz!k*dAv5029Vkf9$3Aa");
 	$dao->saveUserInfo($first_name, $last_name, $email, $password);
-	header('Location: success.php');
+	header('Location: login.php');
 	exit();
 }
 else{

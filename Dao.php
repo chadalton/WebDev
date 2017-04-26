@@ -38,12 +38,18 @@ class Dao {
     return reset($q->fetchAll());
   }
 
-  public function getUserInfo(){
+/*public function getUserInfo(){
     $conn = $this->getConnection();
     $select_query = "SELECT firstname, lastname, email FROM user";
     $q = $conn->prepare($select_query);
     $q->execute();
-    return reset($q->fetchAll());
+    return $q->fetchAll();
+  }*/
+
+  public function getUserInfo () {
+    $conn = $this->getConnection();
+    $query = "SELECT * FROM user";
+    return $conn->query($query);
   }
   
   public function checkUserAndPass ($email, $password) {

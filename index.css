@@ -1,6 +1,7 @@
 /*CSS for Home*/
 body{
-	background:rgb(25, 25, 25);
+	/*background: rgb(0, 102, 200);*/
+	background: rgb(20,20,20);
 }
 h1{
 	font-family: "Comfortaa";
@@ -30,6 +31,9 @@ a{
 span{
 	float: left;
 }
+th, td{
+	color: #0040ff;
+}
 .signup a:hover {
     background-color: rgb(200, 200, 200);
 }
@@ -40,7 +44,8 @@ span{
 }
 #nav{
 	text-align: center;
-	background-color:rgb(25, 25, 80);
+	/*background: rgb(0, 102, 200);*/
+	background: rgb(20,20,20);
 	height: 50;
 	margin-left: auto;
     margin-right: auto;
@@ -60,7 +65,7 @@ span{
 	color: #0040ff;
 }
 #nav ul li a:hover {
-    background-color: rgb(200, 200, 200);
+   color: #0040ff;
 }
 
 #nav ul li .current{

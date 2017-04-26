@@ -7,13 +7,14 @@ session_start();
 	<div class="signup">
 		<a href="signup.php"> SignUp</a>
 		<a href="login.php"> Login</a>
+		<a href="admin_login.php"> Admin Login</a>
 	</div>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link href="index.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<img id="mainlogo" src="logo.png"/>
+	<img id="mainlogo" src="caguitarlessons.png"/>
 	<div id="nav">
 		<ul>
 			<li><a href="index.php">Home</a></li>
@@ -67,9 +68,6 @@ session_start();
 				</p>
 			</div>
 			<input type="submit" value="Login">
-			<div id="admin_login">
-				<a href="admin_login.php"> Admin Login</a>
-			</div>	
 		</form>
 	</div>
 	<div class="clear"></div>

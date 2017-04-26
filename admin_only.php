@@ -51,7 +51,7 @@ $dao = new Dao();
 	<link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<img id="mainlogo" src="logo.png"/>
+	<img id="mainlogo" src="caguitarlessons.png"/>
 	<nav id="nav">
 		<ul>
 			<li><a class ="current" href="index.php">Home</a></li>
@@ -65,10 +65,12 @@ $dao = new Dao();
 			$userInfo = $dao->getUserInfo();
 
 			echo '<table with="70%" border="1" cellpadding="5" cellspacing="5">
+					<h1>All Users</h1>
 					<tr>
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>Email</th>
+						<th>In Person</th>
 					</tr>';
 					
 			foreach($userInfo as $user){
@@ -76,12 +78,32 @@ $dao = new Dao();
 				echo "<td>" . $user["firstname"] . "</td>";
 				echo "<td>" . $user["lastname"] . "</td>";
 				echo "<td>" . $user["email"] . "</td>";
+				echo "<td>" . $user["in_person"] . "</td>";
+				echo "</tr>";
+			};
+
+			$inPerson = $dao->getUserInPerson();
+
+			echo '<table with="70%" border="1" cellpadding="5" cellspacing="5">
+					<h1>In Person Users</h1>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>In Person</th>
+					</tr>';
+					
+			foreach($inPerson as $person){
+				echo "<tr>";
+				echo "<td>" . $person["firstname"] . "</td>";
+				echo "<td>" . $person["lastname"] . "</td>";
+				echo "<td>" . $person["email"] . "</td>";
+				echo "<td>" . $person["in_person"] . "</td>";
 				echo "</tr>";
 			};
 			?>
 	</div>
 	<div class="clear"></div>
-	<div id="footer">Copyright &copy; 2017 Chad Alton
 	</div>
 </body>
 </html>

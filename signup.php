@@ -4,35 +4,36 @@ session_start();
 <html>
 <head>
 	<title>caguitarlessons</title>
-		<div class="signup">
-			<a href="signup.php"> SignUp</a>
-			<a href="
-				<?php
-					if(isset($_SESSION["auth_user"])){
-						echo "logout.php";
-					}
-					else{
-						echo "login.php";
-					}
-				?>
-				"
-			> 
-			<?php
-				if(isset($_SESSION["auth_user"])){
-					echo "Logout";
-				}
-				else{
-					echo "Login";
-				}
-			?></a>
-		</div>
+	<div class="signup">
+		<a href="signup.php"> SignUp</a>
+		<a href="
+		<?php
+		if(isset($_SESSION["auth_user"])){
+			echo "logout.php";
+		}
+		else{
+			echo "login.php";
+		}
+		?>
+		"
+		> 
+		<?php
+		if(isset($_SESSION["auth_user"])){
+			echo "Logout";
+		}
+		else{
+			echo "Login";
+		}
+		?></a>
+		<a href="admin_login.php"> Admin Login</a>
+	</div>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link href="index.css" rel="stylesheet" type="text/css">
 	<link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<img id="mainlogo" src="logo.png"/>
+	<img id="mainlogo" src="caguitarlessons.png"/>
 	<div id="nav">
 		<ul>
 			<li><a href="index.php">Home</a></li>
@@ -116,8 +117,19 @@ session_start();
 						?>
 					</p>
 				</div>
-<!-- 			<label for="message">Message:</label>
-        		<textarea rows="5" cols="20" name="message"></textarea> -->
+				<label for="in_person">Sign Up for In-person Lessons</label> 
+				<input type="radio" name="in_person" value="1"> Yes<br>
+				<input type="radio" name="in_person" value="0"> No<br>
+				<div id="in_person_error">
+					<p id="in_person_text">
+						<?php
+						if(isset($_SESSION["errorInPerson"])){
+							echo $_SESSION["errorInPerson"];
+							unset($_SESSION["errorInPerson"]);
+						}
+						?>
+					</p>
+				</div>
 				<input id="submit" name="submit" type="submit" value="Submit">
 			</form>
 		</div>

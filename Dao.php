@@ -18,14 +18,15 @@ class Dao {
 		return $conn;
   }
 
-  public function saveUserInfo ($firstname, $lastname, $email, $password) {
+  public function saveUserInfo ($firstname, $lastname, $email, $password, $in_person) {
     $conn = $this->getConnection();
-    $user_sql_query = "INSERT INTO user (firstname, lastname, email, password) VALUES (:firstname, :lastname, :email, :password)";
+    $user_sql_query = "INSERT INTO user (firstname, lastname, email, password, in_person) VALUES (:firstname, :lastname, :email, :password, :in_person)";
     $q = $conn->prepare($user_sql_query);
     $q->bindParam(":firstname", $firstname);
     $q->bindParam(":lastname", $lastname);
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
+    $q->bindParam(":in_person", $in_person);
     $q->execute();
   }
 
@@ -38,17 +39,15 @@ class Dao {
     return reset($q->fetchAll());
   }
 
-/*public function getUserInfo(){
-    $conn = $this->getConnection();
-    $select_query = "SELECT firstname, lastname, email FROM user";
-    $q = $conn->prepare($select_query);
-    $q->execute();
-    return $q->fetchAll();
-  }*/
-
   public function getUserInfo () {
     $conn = $this->getConnection();
     $query = "SELECT * FROM user";
+    return $conn->query($query);
+  }
+
+  public function getUserInPerson(){
+    $conn = $this->getConnection();
+    $query = "SELECT * FROM user WHERE in_person = 1";
     return $conn->query($query);
   }
   
@@ -75,10 +74,8 @@ class Dao {
     $users = file($this->usersFile);
 
     foreach ($users as $user) {
-      // recreate User object
       $user = unserialize($user);
       if ($email == trim($user->getEmail())) {
-        // user email found, return the object
         return $user;
       }
     }

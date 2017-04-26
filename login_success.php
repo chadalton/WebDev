@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<img id="mainlogo" src="logo.png"/>
+	<img id="mainlogo" src="caguitarlessons.png"/>
 	<div id="nav">
 		<ul>
 			<li><a href="index.php">Home</a></li>

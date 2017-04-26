@@ -13,6 +13,7 @@ $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$in_person = intval($_POST['in_person']);
 $number = preg_match('@[0-9]@', $password);
 $errors = array();
 $email_exists = $dao->checkEmailExists($email);
@@ -89,9 +90,18 @@ if(!$number && !isset($_SESSION["errorPassword"])){
 	$_SESSION["errorPasswordNumber"] = "Password Must Contain Number";
 }
 
+if(isset($_POST["in_person"]) && $_POST["in_person"] != ""){
+	$_SESSION["in_person"] = $in_person;
+	unset($_SESSION["errorInPerson"]);
+}
+else{
+	unset($_SESSION["in_person"]);
+	$_SESSION["errorInPerson"] = "Must Select Yes or No";
+	$errors["errorInPerson"] = "Must Select Yes or No";
+}
 if(count($errors) == 0){
 	$password = hash("sha256", $password . "fKd93Vmz!k*dAv5029Vkf9$3Aa");
-	$dao->saveUserInfo($first_name, $last_name, $email, $password);
+	$dao->saveUserInfo($first_name, $last_name, $email, $password, $in_person);
 	header('Location: login.php');
 	exit();
 }

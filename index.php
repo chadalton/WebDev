@@ -26,6 +26,7 @@
 					echo "Login";
 				}
 			?></a>
+			<a href="admin_login.php"> Admin Login</a>
 		</div>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="index.css" >
@@ -34,7 +35,7 @@
 		<link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<img id="mainlogo" src="logo.png"/>
+	    <div><img id="mainlogo" src="caguitarlessons.png"/></div>
 		<nav id="nav">
 			<ul>
 				<li><a class ="current" href="index.php">Home</a></li>
@@ -44,10 +45,11 @@
 			</ul>
 		</nav>
 		<div class="multiple-items">
-			<img src="https://i.ytimg.com/vi/ZLHjvAJlC0o/maxresdefault.jpg"/>
+			<img src="http://www.hdwallpaperspop.com/wp-content/uploads/2016/11/black-electric-guitar-desktop-wallpaper.jpg"/>
 			<img src="http://wallpapercave.com/wp/3cDlKE0.jpg"/>
-			<img src="http://www.todayifoundout.com/wp-content/uploads/2013/10/electric-guitar.jpg"/>
+			<img src="http://wallpapercave.com/wp/bBWSsFB.jpg"/>
 			<img src="https://images3.alphacoders.com/355/35509.jpg"/>
+			<img src="guitar_index.jpg">
 		</div>
 		<div class="intro_content">
 			<ul>
@@ -76,8 +78,6 @@
     				infinite: true,
     				slidesToShow: 3,
     				slidesToScroll: 1,
-    				autoplay: true,
-    				autoplaySpeed: 2000,
     				arrows: false,
     				dots: true,
     			});

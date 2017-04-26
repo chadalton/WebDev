@@ -27,7 +27,7 @@ session_start();
 		?></a>
 		<a href="admin_login.php"> Admin Login</a>
 	</div>
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="black_favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="index.css" >
 	<script type="text/javascript" src="jquery-3.2.1.min.js"></script> 
 </head>

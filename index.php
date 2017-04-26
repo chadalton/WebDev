@@ -28,7 +28,7 @@
 			?></a>
 			<a href="admin_login.php"> Admin Login</a>
 		</div>
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="black_favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="index.css" >
 		<link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
 		<link href="slick/slick.css" rel="stylesheet" type="text/css">

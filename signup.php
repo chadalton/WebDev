@@ -27,7 +27,7 @@ session_start();
 		?></a>
 		<a href="admin_login.php"> Admin Login</a>
 	</div>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="black_favicon.ico" type="image/x-icon">
 	<link href="index.css" rel="stylesheet" type="text/css">
 	<link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
 </head>
